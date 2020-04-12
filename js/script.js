@@ -86,6 +86,55 @@ detectLevel(appData.oneDay);
 
 
 
+
+function qwBySaving() {
+    let qwSave = prompt('Скажите, у Вас есть сбережения?');
+    if (qwSave == 'yes' && typeof(qwSave) != null && qwSave != '') {
+        appData.savings = !!'true';
+        //здесь вызвать функцию расчета процентов
+        raschProc();
+
+    } else {
+        let xxx;
+        while (qwSave == xxx || qwSave == '') {
+            alert('вы не ответили на вопрос');
+            qwSave = prompt('Скажите, у Вас есть сбережения?');
+        }
+    }
+    while (qwSave == 'no') {
+        alert('Вы сказали у вас нет сбережений. Хуёво чё...');
+        break;
+    }
+}
+qwBySaving();
+console.log(appData);
+
+
+
+function raschProc() {
+    let sber,
+        procSber;
+    while (isNaN(sber) || sber == '' || sber == null) {
+        sber = +prompt('Какая сумма находится на процентной ставке?');
+    }
+    while (isNaN(procSber) || procSber == '' || procSber == null) {
+        procSber = +prompt('Под какой годовой процент ёпт?');
+    }
+        appData.monthIncome = (sber*procSber/100)/12;
+        alert('Дружок, твой МЕСЯЧНЫЙ доход от бобла, которое лежит под процентами равен: ' + appData.monthIncome);
+        if (appData.monthIncome >= 2000){
+            alert('Братан, у тебя есть возможность нормально заработать');
+        } else {
+            alert('Братан, сорян, но ты не разбоготеешь...');
+        }
+}
+
+console.log(appData);
+
+
+
+
+
 function chooseOptExpenses(){
     for(let i = 1; i < 4; i++){
         let a = prompt('Статья необязательных расходов?');
@@ -101,4 +150,3 @@ function chooseOptExpenses(){
 }
 console.log(appData);
 chooseOptExpenses();
-
