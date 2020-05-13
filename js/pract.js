@@ -36,6 +36,7 @@ let btn = document.getElementsByTagName('button');
 let circle = document.getElementsByClassName('circle');
 let heart = document.querySelectorAll('.heart');
 let oneHeart = document.querySelector('.heart');
+let wrapper = document.querySelector('.wrapper');
 
 console.log(box);
 console.log(btn);
@@ -45,6 +46,7 @@ console.log(circle[0]);
 console.log(heart);
 console.log(heart[2]);
 console.log(oneHeart);
+console.log(wrapper);
 
 box.style.backgroundColor = 'blue';
 
@@ -61,3 +63,26 @@ circle[2].style.backgroundColor = 'green';
 // heart.forEach(function(item, i, mass){
 //     item.style.backgroundColor = 'green';
 // });
+
+let elemDiv = document.createElement('div');
+let txtNode = document.createTextNode('Hello World');
+
+elemDiv.classList.add('black');
+
+// document.body.appendChild(elemDiv);
+
+// console.log(elemDiv);
+
+// wrapper.appendChild(elemDiv);
+
+document.body.insertBefore(elemDiv, circle[0]);
+
+document.body.removeChild(circle[0]);
+
+wrapper.removeChild(heart[1]);
+
+document.body.replaceChild(btn[1], circle[1]);
+
+elemDiv.textContent = 'Hello world!';
+
+box.textContent = 'Hi people';
