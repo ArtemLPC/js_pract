@@ -1,71 +1,70 @@
-// let menItem = document.querySelectorAll('.menu-item');
-// console.log(menItem[1]);
+'use strict';
 
-// let menu = document.querySelector('.menu');
-// console.log(menu);
+let menItem = document.querySelectorAll('.menu-item');
+console.log(menItem[1]);
 
-// menu.insertBefore(menItem[2], menItem[1]);
+let menu = document.querySelector('.menu');
+console.log(menu);
 
-// let fiveElem = document.createElement('div');
+menu.insertBefore(menItem[2], menItem[1]);
 
-// fiveElem.classList.add('menu-item');
-// console.log(fiveElem);
+let fiveElem = document.createElement('div');
 
-// menu.appendChild(fiveElem);
+fiveElem.classList.add('menu-item');
+console.log(fiveElem);
 
-// fiveElem.textContent = ('Пятый пункт');
+menu.appendChild(fiveElem);
 
-// document.body.style.backgroundImage = 'url(http://127.0.0.1:5501/TASK_6/img/apple_true.jpg)';
+fiveElem.textContent = ('Пятый пункт');
 
-// let columns = document.getElementsByClassName('column');
-// console.log(columns);
+document.body.style.backgroundImage = 'url(http://127.0.0.1:5501/TASK_6/img/apple_true.jpg)';
 
-// let tlt = document.getElementById('title');
-// console.log(tlt);
+let columns = document.getElementsByClassName('column');
+console.log(columns);
+
+let tlt = document.getElementById('title');
+console.log(tlt);
 
 
 
-// let elemIner = 'подлинную';
-// let txtObj = tlt.textContent;
+let elemIner = 'подлинную';
+let txtObj = tlt.textContent;
 
-// txtObj = txtObj.replace(/ +/g, ' ').trim(); //убираем лишние пробелы
+txtObj = txtObj.replace(/ +/g, ' ').trim(); //убираем лишние пробелы
 
-// console.log(txtObj);
+console.log(txtObj);
 
-// let newMass = txtObj.split(' ');
-
-// // console.log(newMass);
-
-// newMass.forEach(function(item, i, mass){
-//     if (mass[i] == 'технику'){
-//         mass.splice(i, 0, elemIner);
-//     }
-// });
-
-// newMass.forEach(function(item, i, mass){
-//     if (mass[i] == elemIner){
-//         mass.splice(i, 1);
-//     }
-// });
+let newMass = txtObj.split(' ');
 
 // console.log(newMass);
 
-// let finishNod = newMass.join(' ');
-// console.log(finishNod);
+newMass.forEach(function(item, i, mass){
+    if (mass[i] == 'технику'){
+        mass.splice(i, 0, elemIner);
+    }
+});
 
-// tlt.textContent = finishNod;
+newMass.forEach(function(item, i, mass){
+    if (mass[i] == elemIner){
+        mass.splice(i, 1);
+    }
+});
 
-// console.log(tlt);
+console.log(newMass);
 
-// let rekl = document.querySelector('.adv');
-// console.log(rekl);
+let finishNod = newMass.join(' ');
+console.log(finishNod);
 
-// columns[1].removeChild(rekl);
+tlt.textContent = finishNod;
+
+console.log(tlt);
+
+let rekl = document.querySelector('.adv');
+console.log(rekl);
+
+columns[1].removeChild(rekl);
 
 
-// let vopros = prompt('Расскажите как вы относитесь к технике Apple:');
-// let otvet = document.getElementById('prompt');
-// otvet.textContent = vopros;
-
-adv = document.getElementsByClassName("adv")[0];
-console.log(adv);
+let vopros = prompt('Расскажите как вы относитесь к технике Apple:');
+let otvet = document.getElementById('prompt');
+otvet.textContent = vopros;
